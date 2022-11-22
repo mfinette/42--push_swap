@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:47:26 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/22 18:46:39 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/22 20:24:02 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,38 @@ int	main(int argc, char **argv)
 		data = get_data_2(argv[1]);
 	if (argc > 2)
 		data = get_data_n(&argv[1], argc);
-	printf("DATA /////////////////////////////\n\n");
-	printf("data.size_a = %d\n", data.size_a);
+	//sa(data);
 	while (i < data.size_a)
 	{
-		printf("data.stack_a[%d] = %d\n", i, data.stack_a[i]);
+		printf("a[%d] = %d\n", i, data.stack_a[i]);
 		i++;
 	}
 	i = 0;
-	printf("\n");
-	printf("data.size_b = %d\n", data.size_b);
-	while (i < data.size_b)
-	{
-		printf("data.stack_b[%d] = %d\n", i, data.stack_b[i]);
-		i++;
-	}		
-	i = 0;
-	printf("\n");
+	rr(data);
+	rr(data);
+	rr(data);
+	rr(data);
+	rr(data);
+	//printf("DATA /////////////////////////////\n\n");
+	//printf("data.size_a = %d\n", data.size_a);
 	while (i < data.size_a)
 	{
-		printf("data.stack_sort[%d] = %d\n", i, data.stack_sort[i]);
+		printf("a[%d] = %d\n", i, data.stack_a[i]);
 		i++;
 	}
+	// i = 0;
+	// printf("\n");
+	// printf("data.size_b = %d\n", data.size_b);
+	// while (i < data.size_b)
+	// {
+	// 	printf("data.stack_b[%d] = %d\n", i, data.stack_b[i]);
+	// 	i++;
+	// }		
+	// i = 0;
+	// printf("\n");
+	// while (i < data.size_a)
+	// {
+	// 	printf("data.stack_sort[%d] = %d\n", i, data.stack_sort[i]);
+	// 	i++;
+	// }
 }
