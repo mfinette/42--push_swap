@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:47:26 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/22 20:24:02 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/22 20:41:38 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	i = 0;
-	rr(data);
-	rr(data);
-	rr(data);
-	rr(data);
-	rr(data);
+	while (i < data.size_b)
+	{
+		printf("data.stack_b[%d] = %d\n", i, data.stack_b[i]);
+		i++;
+	}
+	i = 0;
+	pb(&data);
 	//printf("DATA /////////////////////////////\n\n");
 	//printf("data.size_a = %d\n", data.size_a);
 	while (i < data.size_a)
@@ -44,14 +46,15 @@ int	main(int argc, char **argv)
 		printf("a[%d] = %d\n", i, data.stack_a[i]);
 		i++;
 	}
-	// i = 0;
+	i = 0;
+	printf("\n");
 	// printf("\n");
 	// printf("data.size_b = %d\n", data.size_b);
-	// while (i < data.size_b)
-	// {
-	// 	printf("data.stack_b[%d] = %d\n", i, data.stack_b[i]);
-	// 	i++;
-	// }		
+	while (i < data.size_b)
+	{
+		printf("b[%d] = %d\n", i, data.stack_b[i]);
+		i++;
+	}		
 	// i = 0;
 	// printf("\n");
 	// while (i < data.size_a)
