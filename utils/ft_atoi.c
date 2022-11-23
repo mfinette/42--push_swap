@@ -6,11 +6,11 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:15:21 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/22 16:57:28 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 08:27:33 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_atoi(const char *str)
 {

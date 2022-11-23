@@ -6,11 +6,11 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:55:43 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/22 19:28:46 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 08:27:41 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_putstrendl(char *str)
 {

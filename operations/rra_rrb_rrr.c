@@ -6,11 +6,11 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 07:36:32 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 08:09:06 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 08:29:11 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rra(t_stacks *data)
 {
