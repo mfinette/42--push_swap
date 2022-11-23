@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 07:58:32 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 08:09:19 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void			rr(t_stacks *data);
 void			pb(t_stacks *data);
 void			pa(t_stacks *data);
 void			rra(t_stacks *data);
+void			rrr(t_stacks *data);
 void			free_all(t_stacks data);
 
 #endif
