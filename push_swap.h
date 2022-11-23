@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 08:26:23 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 09:55:38 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 	int	*stack_sort;
 	int	size_a;
 	int	size_b;
+	int	size_sort;
 }				t_stacks;
 
 t_stacks		get_data_n(char	**str, int argc);
@@ -42,8 +43,12 @@ void			rr(t_stacks *data);
 void			pb(t_stacks *data);
 void			pa(t_stacks *data);
 void			rra(t_stacks *data);
+void			rrb(t_stacks *data);
 void			rrr(t_stacks *data);
 void			free_all(t_stacks data);
 void			print_tabs(t_stacks data);
+void			sort_all(t_stacks *data);
+int				check_result(t_stacks *data);
+int				check_input(t_stacks *data, char *str);
 
 #endif

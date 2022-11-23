@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:34:19 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 08:14:04 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 08:54:18 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ t_stacks	get_data_2(char *str)
 		i = get_next_i(str, i);
 		j++;
 	}
+	data.size_sort = size;
 	data.size_a = size;
 	data.size_b = 0;
 	stack_sort(data);
@@ -102,6 +103,7 @@ t_stacks	get_data_n(char	**str, int argc)
 	data.stack_b = ft_calloc(sizeof(int), (argc - 1));
 	data.stack_sort = ft_calloc(sizeof(int), (argc - 1));
 	data.size_a = argc - 1;
+	data.size_sort = argc - 1;
 	data.size_b = 0;
 	while (i < argc - 1)
 	{
