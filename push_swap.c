@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:47:26 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 10:04:38 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:48:17 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(int argc, char **argv)
 		data = get_data_n(&argv[1], argc);
 	if (check_input(&data, argv[1]))
 	{
-		//print_tabs(data);
-		sort_all(&data);
-		//print_tabs(data);
+		print_tabs(data);
+		sort_three(data);
+		print_tabs(data);
 	}
 		free_all(data);
 	return (0);
@@ -58,6 +58,7 @@ void	sort_all(t_stacks *data)
 		if (r == 5)
 			sb(data);
 		if (r == 6)
+			
 			ss(data);
 		if (r == 7)
 			rra(data);
@@ -73,6 +74,61 @@ void	sort_all(t_stacks *data)
 	}
 	//printf("operations done = %d\n", i);
 }
-	// ra(data);
-	// ra(data);
 
+void	sort_long(t_stacks *data)
+{
+	int	i;
+	int	counter;
+
+	i = 1;
+	counter = 0;
+	while (i < data->size_sort)
+	{
+		while (data->stack_sort[data->size_sort - i] != data->stack_a[data->size_a - 1])
+		{
+			ra(data);
+			counter++;
+		}
+		pb(data);
+		counter++;
+		i++;
+	}
+	while (data->size_a != data->size_sort)
+	{
+		pa(data);
+		counter++;
+	}
+	printf("operations done = %d\n", counter);
+}	
+
+void	sort_three(t_stacks data)
+{
+	printf("1 = %d\n", data.stack_a[data.size_a - 3]);
+	printf("2 = %d\n", data.stack_a[data.size_a - 2]);
+	printf("3 = %d\n", data.stack_a[data.size_a - 1]);
+	if (data.stack_a[data.size_a - 1] > data.stack_a[data.size_a - 2])
+	{
+		if (data.stack_a[data.size_a - 2] < data.stack_a[data.size_a - 3])
+		{
+			if (data.stack_a[data.size_a - 3] < data.stack_a[data.size_a - 1])
+				ra(&data);
+			else
+				sa(&data);
+		}
+		else
+		{
+			sa(&data);
+			rra(&data);
+		}
+	}
+	else
+	{
+		if (data.stack_a[data.size_a - 3] > data.stack_a[data.size_a - 1])
+			{
+				sa(&data);
+				rra(&data);
+			}
+		else
+			rra(&data);
+	}
+}

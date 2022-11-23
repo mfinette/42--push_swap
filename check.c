@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 09:58:25 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 10:13:34 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ int	check_input(t_stacks *data, char *str)
 	int	i;
 	int	j;
 
+	i = 0;
+	while (str[i])
+	{
+		if ((str[i] > '9' || str[i] < '0') && str[i] != ' ')
+			return (0);
+		i++;
+	}
 	i = 0;
 	while (i < data->size_a)
 	{
