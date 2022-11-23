@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/22 20:42:50 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 07:58:32 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ void			stack_sort(t_stacks data);
 void			*ft_calloc(size_t nmemb, size_t size);
 size_t			ft_strlen(const char *str);
 void			ft_putstrendl(char *str);
-void			sa(t_stacks data);
-void			sb(t_stacks data);
-void			ss(t_stacks data);
-void			ra(t_stacks data);
-void			rb(t_stacks data);
-void			rr(t_stacks data);
+void			sa(t_stacks *data);
+void			sb(t_stacks *data);
+void			ss(t_stacks *data);
+void			ra(t_stacks *data);
+void			rb(t_stacks *data);
+void			rr(t_stacks *data);
 void			pb(t_stacks *data);
 void			pa(t_stacks *data);
+void			rra(t_stacks *data);
+void			free_all(t_stacks data);
 
 #endif

@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   rra_rrb_rrr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 20:26:59 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 07:52:17 by mfinette         ###   ########.fr       */
+/*   Created: 2022/11/23 07:36:32 by mfinette          #+#    #+#             */
+/*   Updated: 2022/11/23 07:52:23 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stacks *data)
+void	rra(t_stacks *data)
 {
-	if (data->size_b == 0)
-		return ;
-	data->stack_a[data->size_a] = data->stack_b[data->size_b - 1];
-	data->stack_b[data->size_b - 1] = 0;
-	data->size_a++;
-	data->size_b--;
-	ft_putstrendl("pa\n");
+	int	tmp;
+	int	i;
+
+	i = 0;
+	tmp = data->stack_a[0];
+	while (i < data->size_a - 1)
+	{
+		data->stack_a[i] = data->stack_a[i + 1];
+		i++;
+	}
+	data->stack_a[i] = tmp;
+	ft_putstrendl("rra\n");
 }
 
-void	pb(t_stacks *data)
+void	rrb(t_stacks *data)
 {
-	if (data->size_a == 0)
-		return ;
-	data->stack_b[data->size_b] = data->stack_a[data->size_a - 1];
-	data->stack_a[data->size_a - 1] = 0;
-	data->size_b++;
-	data->size_a--;
-	ft_putstrendl("pb\n");
+	int	tmp;
+	int	i;
+
+	i = 0;
+	tmp = data->stack_b[0];
+	while (i < data->size_b - 1)
+	{
+		data->stack_b[i] = data->stack_b[i + 1];
+		i++;
+	}
+	data->stack_b[i] = tmp;
+	ft_putstrendl("rrb\n");
 }

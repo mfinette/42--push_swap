@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:47:26 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/22 20:41:38 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/23 07:58:54 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 		data = get_data_2(argv[1]);
 	if (argc > 2)
 		data = get_data_n(&argv[1], argc);
-	//sa(data);
 	while (i < data.size_a)
 	{
 		printf("a[%d] = %d\n", i, data.stack_a[i]);
@@ -38,7 +37,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	i = 0;
-	pb(&data);
+	rra(&data);
 	//printf("DATA /////////////////////////////\n\n");
 	//printf("data.size_a = %d\n", data.size_a);
 	while (i < data.size_a)
@@ -62,4 +61,6 @@ int	main(int argc, char **argv)
 	// 	printf("data.stack_sort[%d] = %d\n", i, data.stack_sort[i]);
 	// 	i++;
 	// }
+	free_all(data);
+	return (0);
 }
