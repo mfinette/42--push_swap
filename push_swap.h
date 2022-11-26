@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 19:55:13 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/26 09:17:48 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ void			rra(t_stacks *data);
 void			rrb(t_stacks *data);
 void			rrr(t_stacks *data);
 void			free_all(t_stacks data);
-void			print_tabs(t_stacks data);
+void			print_tabs(t_stacks *data);
 void			sort_all(t_stacks *data);
 int				check_result(t_stacks *data);
 int				check_input(t_stacks *data, char *str);
 void			sort_long(t_stacks *data);
-void			sort_three(t_stacks data);
+int				sort_three(t_stacks *data);
+int				sort_five(t_stacks *data);
 
 #endif
