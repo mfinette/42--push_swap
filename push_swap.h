@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/26 09:17:48 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/26 14:27:03 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ int				check_input(t_stacks *data, char *str);
 void			sort_long(t_stacks *data);
 int				sort_three(t_stacks *data);
 int				sort_five(t_stacks *data);
+int				sort_hunder(t_stacks *data);
+int			push_number_to_top(t_stacks *data, int nb);
 
 #endif

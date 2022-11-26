@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:47:26 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/26 13:55:59 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/26 14:31:49 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(int argc, char **argv)
 		data = get_data_n(&argv[1], argc);
 	if (check_input(&data, argv[1]))
 	{
-		print_tabs(&data);
-		sort_five(&data);
-		print_tabs(&data);
+		//print_tabs(&data);
+		sort_long(&data);
+		//print_tabs(&data);
 	}
 	free_all(data);
 	return (0);
@@ -83,6 +83,7 @@ void	sort_long(t_stacks *data)
 	counter = 0;
 	while (i < data->size_sort)
 	{
+		counter += push_number_to_top(data, data->stack_sort[data->size_sort - i]);
 		while (data->stack_sort[data->size_sort - i] != data->stack_a[data->size_a - 1])
 		{
 			ra(data);
@@ -148,7 +149,7 @@ int	get_number_below(t_stacks *data, int tmp)
 	return (data->stack_sort[i - 1]);
 }
 
-void	push_number_to_top(t_stacks *data, int nb)
+int	push_number_to_top(t_stacks *data, int nb)
 {
 	int	i;
 	int	top_dist;
@@ -159,13 +160,21 @@ void	push_number_to_top(t_stacks *data, int nb)
 		i++;
 	bot_dist = i;
 	top_dist = data->size_a - i - 1;
+	i = 0;
 	while (data->stack_a[data->size_a - 1] != nb)
 	{
 		if (top_dist > bot_dist)
+		{
 			rra(data);
+			i++;
+		}
 		else
+		{
 			ra(data);
+			i++;
+		}
 	}
+	return (i);
 }
 
 int	sort_five(t_stacks *data)
@@ -188,5 +197,13 @@ int	sort_five(t_stacks *data)
 	pa(data);
 	while (!check_result(data))
 		ra(data);
+	return (0);
+}
+
+int	sort_hunder(t_stacks *data)
+{
+	int	chunks;
+
+	chunks = data->size_sort / 5;
 	return (0);
 }
