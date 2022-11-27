@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_data.c                                         :+:      :+:    :+:   */
+/*   sort_two.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:34:19 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:20:47 by mfinette         ###   ########.fr       */
+/*   Created: 2022/11/27 19:27:58 by mfinette          #+#    #+#             */
+/*   Updated: 2022/11/27 19:29:16 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stacks	get_data(int argc, char **argv)
+int	sort_two(t_stacks *data)
 {
-	t_stacks	data;
-
-	if (argc == 2)
-		data = get_data_str(argv[1]);
-	else
-		data = get_data_tab(argc, &argv[1]);
-	return (data);
+	if (data->stack_a[1] > data->stack_a[0])
+		return (1);
+	return (sa(data), 1);
 }

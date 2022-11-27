@@ -1,51 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   binary_parsing.c                                   :+:      :+:    :+:   */
+/*   get_data_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 17:47:09 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:35:57 by mfinette         ###   ########.fr       */
+/*   Created: 2022/11/27 18:40:00 by mfinette          #+#    #+#             */
+/*   Updated: 2022/11/27 19:14:11 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static	long	dec_to_bin(long n)
+t_stacks	get_data_tab(int argc, char **str)
 {
-	long	bin;
-	long	dec;
-	long	i;
-
-	bin = 0;
-	dec = n;
-	i = 1;
-	while (dec > 0)
-	{
-		bin += (dec % 2) * i;
-		dec /= 2;
-		i *= 10;
-	}
-	return (bin);
-}
-
-void	binary_index_parse(t_stacks	*data)
-{
-	int	i;
-	int	j;
+	int			i;
+	t_stacks	data;
 
 	i = 0;
-	j = 0;
-	while (i < data->size_sort)
+	data.stack_a = ft_calloc(sizeof(int), (argc - 1));
+	data.stack_b = ft_calloc(sizeof(int), (argc - 1));
+	data.stack_sort = ft_calloc(sizeof(int), (argc - 1));
+	data.size_a = argc - 1;
+	data.size_sort = argc - 1;
+	data.size_b = 0;
+	while (i < argc - 1)
 	{
-		while (j < data->size_sort)
-		{
-			if (data->stack_a[j] == data->stack_sort[i])
-				data->stack_a[j] = dec_to_bin(i);
-			j++;
-		}
-	j = 0;
-	i++;
+		data.stack_a[i] = ft_atoi(str[i]);
+		i++;
 	}
+	stack_sort(data, 0);
+	binary_index_parse(&data);
+	return (data);
 }

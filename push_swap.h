@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 17:49:52 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:39:45 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ typedef struct s_list
 	int	size_a;
 	int	size_b;
 	int	size_sort;
+	int	error_check;
 }				t_stacks;
 
-t_stacks		get_data_n(char	**str, int argc);
-t_stacks		get_data_2(char *str);
+int				check_data(int argc, char **argv);
+t_stacks		get_data(int argc, char **argv);
+t_stacks		get_data_tab(int argc, char	**str);
+t_stacks		get_data_str(char *str);
 int				ft_atoi(const char *str);
 void			stack_sort(t_stacks data, int n);
 void			*ft_calloc(size_t nmemb, size_t size);
@@ -49,11 +52,12 @@ void			free_all(t_stacks data);
 void			print_tabs(t_stacks *data);
 void			sort_all(t_stacks *data);
 int				check_result(t_stacks *data);
-int				check_input(t_stacks *data, char *str);
-void			sort_long(t_stacks *data);
+int				check_input(t_stacks *data);
+int				check_str(char *str);
+int				general_sort(t_stacks *data);
+int				sort_two(t_stacks *data);
 int				sort_three(t_stacks *data);
 int				sort_five(t_stacks *data);
-int				push_number_to_top(t_stacks *data, int nb);
 void			binary_index_parse(t_stacks	*data);
 void			solve_binary(t_stacks *data);
 int				is_sort(t_stacks *data);

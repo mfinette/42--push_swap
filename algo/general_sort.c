@@ -1,51 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   binary_parsing.c                                   :+:      :+:    :+:   */
+/*   general_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 17:47:09 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:35:57 by mfinette         ###   ########.fr       */
+/*   Created: 2022/11/27 19:26:34 by mfinette          #+#    #+#             */
+/*   Updated: 2022/11/27 19:41:10 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static	long	dec_to_bin(long n)
+int	general_sort(t_stacks *data)
 {
-	long	bin;
-	long	dec;
-	long	i;
-
-	bin = 0;
-	dec = n;
-	i = 1;
-	while (dec > 0)
+	if (is_sort(data))
+		return (1);
+	if (data->size_a == 2)
+		return (sort_two(data));
+	if (data->size_a == 3)
+		return (sort_three(data));
+	if (data->size_a == 5 || data->size_a == 4)
+		return (sort_five(data));
+	if (data->size_a > 5)
 	{
-		bin += (dec % 2) * i;
-		dec /= 2;
-		i *= 10;
+		binary_index_parse(data);
+		return (solve_binary(data), 1);
 	}
-	return (bin);
-}
-
-void	binary_index_parse(t_stacks	*data)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (i < data->size_sort)
-	{
-		while (j < data->size_sort)
-		{
-			if (data->stack_a[j] == data->stack_sort[i])
-				data->stack_a[j] = dec_to_bin(i);
-			j++;
-		}
-	j = 0;
-	i++;
-	}
+	return (1);
 }

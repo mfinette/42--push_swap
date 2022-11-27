@@ -1,51 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   binary_parsing.c                                   :+:      :+:    :+:   */
+/*   stack_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 17:47:09 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:35:57 by mfinette         ###   ########.fr       */
+/*   Created: 2022/11/27 18:48:48 by mfinette          #+#    #+#             */
+/*   Updated: 2022/11/27 18:48:58 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static	long	dec_to_bin(long n)
+void	stack_sort(t_stacks data, int i)
 {
-	long	bin;
-	long	dec;
-	long	i;
-
-	bin = 0;
-	dec = n;
-	i = 1;
-	while (dec > 0)
-	{
-		bin += (dec % 2) * i;
-		dec /= 2;
-		i *= 10;
-	}
-	return (bin);
-}
-
-void	binary_index_parse(t_stacks	*data)
-{
-	int	i;
+	int	temp;
 	int	j;
 
-	i = 0;
-	j = 0;
-	while (i < data->size_sort)
+	while (i < data.size_a)
 	{
-		while (j < data->size_sort)
+		data.stack_sort[i] = data.stack_a[i];
+		i++;
+	}
+	i = 0;
+	while (i < data.size_a - 1)
+	{
+		j = i + 1;
+		while (j < data.size_a)
 		{
-			if (data->stack_a[j] == data->stack_sort[i])
-				data->stack_a[j] = dec_to_bin(i);
+			if (data.stack_sort[j] < data.stack_sort[i])
+			{
+				temp = data.stack_sort[i];
+				data.stack_sort[i] = data.stack_sort[j];
+				data.stack_sort[j] = temp;
+			}
 			j++;
 		}
-	j = 0;
-	i++;
+		i++;
 	}
 }
