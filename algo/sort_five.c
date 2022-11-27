@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:08:34 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:23:44 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/27 21:08:17 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static	int	push_number_to_top(t_stacks *data, int nb)
 	int	bot_dist;
 
 	i = 0;
+	if (is_in_b(data, get_number_below(data, nb)))
+		return (push_number_to_top(data, get_number_below(data, nb)));
 	while (data->stack_a[i] != nb)
 		i++;
 	bot_dist = i;
@@ -53,15 +55,10 @@ static	int	push_number_to_top(t_stacks *data, int nb)
 	while (data->stack_a[data->size_a - 1] != nb)
 	{
 		if (top_dist > bot_dist)
-		{
 			rra(data);
-			i++;
-		}
 		else
-		{
 			ra(data);
-			i++;
-		}
+		i++;
 	}
 	return (i);
 }
@@ -73,18 +70,16 @@ int	sort_five(t_stacks *data)
 	pb(data);
 	pb(data);
 	sort_three(data);
+	inverse_sort_two_b(data);
 	tmp = data->stack_b[data->size_b - 1];
-	while (is_in_b(data, get_number_below(data, tmp)))
-	{
-		rb(data);
-		tmp = data->stack_b[data->size_b - 1];
-	}
+	if (is_in_b(data, get_number_below(data, tmp)))
+		sort_two_b(data);
 	push_number_to_top(data, get_number_below(data, tmp));
 	pa(data);
 	tmp = data->stack_b[data->size_b - 1];
 	push_number_to_top(data, get_number_below(data, tmp));
 	pa(data);
-	while (!check_result(data))
+	while (!is_sort(data))
 		ra(data);
 	return (0);
 }

@@ -6,23 +6,22 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:44:52 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:57:20 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	check_result(t_stacks *data)
+int	is_sort(t_stacks *data)
 {
 	int	i;
 
-	i = 1;
-	while (i < data->size_sort)
-	{
-		if (data->stack_a[i] != data->stack_sort[i])
+	if (data->size_b)
+		return (0);
+	i = 0;
+	while (++i < data->size_a)
+		if (data->stack_a[i] < data->stack_a[i - 1])
 			return (0);
-		i++;
-	}
 	return (1);
 }
 

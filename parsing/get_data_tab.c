@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:40:00 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:14:11 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/27 20:34:06 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ t_stacks	get_data_tab(int argc, char **str)
 		i++;
 	}
 	stack_sort(data, 0);
-	binary_index_parse(&data);
 	return (data);
 }
