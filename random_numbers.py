@@ -3,7 +3,7 @@ import string
 import re
 
 res = []
-length = 500
+length = 100
 for i in range(length):
 	i = random.randint(-1000, 1000)
 	if str(i) not in res:

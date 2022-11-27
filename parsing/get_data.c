@@ -6,19 +6,17 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:34:19 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/26 14:45:48 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:49:31 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	stack_sort(t_stacks data)
+void	stack_sort(t_stacks data, int i)
 {
 	int	temp;
-	int	i;
 	int	j;
 
-	i = 0;
 	while (i < data.size_a)
 	{
 		data.stack_sort[i] = data.stack_a[i];
@@ -89,7 +87,8 @@ t_stacks	get_data_2(char *str)
 	data.size_sort = size;
 	data.size_a = size;
 	data.size_b = 0;
-	stack_sort(data);
+	stack_sort(data, 0);
+	binary_index_parse(&data);
 	return (data);
 }
 
@@ -110,6 +109,7 @@ t_stacks	get_data_n(char	**str, int argc)
 		data.stack_a[i] = ft_atoi(str[i]);
 		i++;
 	}
-	stack_sort(data);
+	stack_sort(data, 0);
+	binary_index_parse(&data);
 	return (data);
 }

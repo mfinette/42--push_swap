@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/26 14:45:53 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:04:24 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ int	check_input(t_stacks *data, char *str)
 	while (str[i])
 	{
 		if ((str[i] > '9' || str[i] < '0') && str[i] != ' ')
+		{
+			ft_putstrendl("salutation\n");
 			return (0);
+		}
 		i++;
 	}
 	i = 0;
@@ -46,7 +49,7 @@ int	check_input(t_stacks *data, char *str)
 		{
 			if (data->stack_a[i] == data->stack_a[j])
 			{
-				ft_putstrendl("INPUT ERROR PLEASE DONT DO THAT\n");
+				ft_putstrendl("error\n");
 				return (0);
 			}
 			j++;
