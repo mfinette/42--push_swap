@@ -6,13 +6,13 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 15:04:30 by mfinette          #+#    #+#              #
-#    Updated: 2022/11/26 15:04:32 by mfinette         ###   ########.fr        #
+#    Updated: 2022/11/28 16:37:29 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CC		= gcc
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 AR		= ar rcs
 RM		= @rm -f
@@ -24,19 +24,29 @@ GREEN = \033[0;92m
 BLUE = \033[0;94m
 CYAN = \033[0;96m
 
-FILES = 
-		push_swap						\
-		utils/get_data					\
+FILES = push_swap						\
+		algo/binary_sort				\
+		algo/general_sort				\
+		algo/sort_five					\
+		algo/sort_three					\
+		algo/sort_two					\
+		parsing/binary_parsing			\
+		parsing/check_overflow			\
+		parsing/check					\
+		parsing/get_data_str			\
+		parsing/get_data_tab			\
+		parsing/get_data				\
 		utils/ft_atoi					\
 		utils/ft_calloc					\
 		utils/free_all					\
 		utils/ft_putstrendl				\
-		utils/print_tabs				\
+		utils/stack_sort				\
 		operations/sa_sb_ss				\
 		operations/ra_rb_rr				\
 		operations/pa_pb				\
 		operations/rra_rrb_rrr			\
 
+all: $(NAME)
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
@@ -46,13 +56,13 @@ OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
 %.o:%.c $(HEADER) Makefile
 	@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c $@ -o $< -I ./ 
 
 $(NAME): $(OBJS)
-	@$(AR) $@ $^
+#	@$(AR) $@ $^
 	@echo "$(GREEN)😳😎pushswap compiled!😎😳$(DEF_COLOR)"
+	@${CC} ${FLAGS} ${OBJS}
 
-all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS)
