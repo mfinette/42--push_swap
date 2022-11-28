@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 21:15:30 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:23:38 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -27,7 +27,6 @@ typedef struct s_list
 	int	size_sort;
 	int	error_check;
 }				t_stacks;
-
 
 // ****OPERATIONS*****
 void			sa(t_stacks *data);
@@ -48,8 +47,8 @@ t_stacks		get_data_tab(int argc, char	**str);
 t_stacks		get_data_str(char *str);
 void			binary_index_parse(t_stacks	*data);
 int				check_data(int argc, char **argv);
-int				check_input(t_stacks *data);
-int				check_str(char *str);
+int				check_overflow_str(char *str);
+int				check_overflow_tab(int argc, char **argv);
 
 // ****ALGO****
 int				general_sort(t_stacks *data);
@@ -61,10 +60,11 @@ int				sort_five(t_stacks *data);
 void			solve_binary(t_stacks *data);
 
 // ****UTILS****
-void			free_all(t_stacks data);
+void			free_all(t_stacks *data);
 void			print_tabs(t_stacks *data);
 void			sort_all(t_stacks *data);
 int				ft_atoi(const char *str);
+long			long_atoi(char *str);
 void			stack_sort(t_stacks data, int n);
 void			*ft_calloc(size_t nmemb, size_t size);
 size_t			ft_strlen(const char *str);

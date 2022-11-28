@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   check_overflow.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 11:15:21 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 09:23:47 by mfinette         ###   ########.fr       */
+/*   Created: 2022/11/28 09:19:42 by mfinette          #+#    #+#             */
+/*   Updated: 2022/11/28 10:53:19 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_atoi(const char *str)
+static	int	get_next_i(char *str, int i)
+{
+	while ((str[i] >= '0' && str[i] <= '9') || str[i] == '-')
+		i++;
+	while (str[i] == ' ')
+		i++;
+	return (i);
+}
+
+long	long_atoi(char *str)
 {
 	int				i;
 	long long int	result;
@@ -37,15 +46,41 @@ int	ft_atoi(const char *str)
 		result = result + (str[i] - 48) * sign;
 		i++;
 	}
-	return ((int)result);
+	return (result);
 }
 
-size_t	ft_strlen(const char *s)
+static int	overflow_strlen(char *str)
 {
-	size_t	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (s[i])
+	j = 0;
+	while (str[i] && str[i] == ' ')
 		i++;
-	return (i);
+	while (str[i + j] && str[i + j] != ' ')
+		j++;
+	return (j);
+}
+
+int	check_overflow_str(char *str)
+{
+	int		i;
+	long	result;
+
+	i = 0;
+	while (str[i])
+	{
+		if (overflow_strlen(&str[i]) >= 10)
+		{
+			if (long_atoi(&str[i]) > INT_MAX)
+				return (1);
+			if (long_atoi(&str[i]) < INT_MIN)
+				return (1);
+		}
+		if (overflow_strlen(&str[i]) > 11)
+			return (1);
+		i = get_next_i(str, i);
+	}
+	return (0);
 }

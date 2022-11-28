@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:42:25 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 20:34:03 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:08:51 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	int	get_next_i(char *str, int i)
 {
-	while (str[i] >= '0' && str[i] <= '9')
+	while ((str[i] >= '0' && str[i] <= '9') || str[i] == '-')
 		i++;
 	while (str[i] == ' ')
 		i++;
@@ -50,7 +50,9 @@ t_stacks	get_data_str(char *str)
 	data.stack_a = ft_calloc(sizeof(int), size);
 	data.stack_b = ft_calloc(sizeof(int), size);
 	data.stack_sort = ft_calloc(sizeof(int), size);
-	while (str[i])
+	if (!data.stack_a || !data.stack_b || !data.stack_sort)
+		return (data);
+	while (j < size)
 	{
 		data.stack_a[j] = ft_atoi(&str[i]);
 		i = get_next_i(str, i);
