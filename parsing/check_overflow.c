@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 09:19:42 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 10:53:19 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:43:02 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ static int	overflow_strlen(char *str)
 int	check_overflow_str(char *str)
 {
 	int		i;
-	long	result;
 
 	i = 0;
 	while (str[i])

@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:18:28 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 17:44:00 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:08:41 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static	int	get_max_index(t_stacks *data)
 	int	j;
 
 	i = 0;
+	j = 0;
 	while (j < data->size_a)
 	{
 		if (data->stack_a[j] > j)

@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 15:04:30 by mfinette          #+#    #+#              #
-#    Updated: 2022/11/28 16:37:29 by mfinette         ###   ########.fr        #
+#    Updated: 2022/11/28 16:58:19 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ FILES = push_swap						\
 		parsing/get_data_tab			\
 		parsing/get_data				\
 		utils/ft_atoi					\
+		utils/print_tabs				\
 		utils/ft_calloc					\
 		utils/free_all					\
 		utils/ft_putstrendl				\
@@ -56,12 +57,11 @@ OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
 %.o:%.c $(HEADER) Makefile
 	@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-	@$(CC) $(CFLAGS) -c $@ -o $< -I ./ 
+	@$(CC) $(CFLAGS) -c $< -o $@ -I ./ 
 
 $(NAME): $(OBJS)
-#	@$(AR) $@ $^
 	@echo "$(GREEN)😳😎pushswap compiled!😎😳$(DEF_COLOR)"
-	@${CC} ${FLAGS} ${OBJS}
+	@${CC} ${FLAGS} ${OBJS} -o ${NAME}
 
 
 clean:
