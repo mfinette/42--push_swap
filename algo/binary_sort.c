@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:18:28 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/29 09:05:16 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:44:16 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	solve_binary(t_stacks *data)
 	{
 		while (i < data->size_sort)
 		{
-			if (get_index(data->stack_a[0], index))
+			if (!get_index(data->stack_a[0], index))
 			{
 				pb(data);
 			}

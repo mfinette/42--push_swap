@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 11:20:54 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:04:10 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	check_data(int argc, char **argv)
 
 	i = 0;
 	if (argc < 2)
-		return (ft_putstrendl("error\n"), 0);
+		return (0);
 	if (argc == 2)
 	{
 		if (check_str(argv[1]))

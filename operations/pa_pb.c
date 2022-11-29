@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 20:26:59 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/29 07:54:58 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:29:43 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	pa(t_stacks *data)
 	{
 		data->stack_a[i] = data->stack_a[i - 1];
 		i--;
-	}	
+	}
 	data->stack_a[0] = data->stack_b[0];
 	i = 0;
-	while (i < data->size_a - 1)
+	while (i < data->size_b - 1)
 	{
 		data->stack_b[i] = data->stack_b[i + 1];
 		i++;
