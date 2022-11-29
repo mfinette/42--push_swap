@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 17:07:32 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 21:05:23 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void			solve_binary(t_stacks *data);
 
 // ****UTILS****
 void			free_all(t_stacks *data);
-void			print_tabs(t_stacks *data);
 void			sort_all(t_stacks *data);
 int				ft_atoi(const char *str);
 long			long_atoi(char *str);
@@ -70,6 +69,8 @@ void			stack_sort(t_stacks data, int n);
 void			*ft_calloc(size_t nmemb, size_t size);
 size_t			ft_strlen(const char *str);
 void			ft_putstrendl(char *str);
+int				ft_puterror(char *str);
 int				is_sort(t_stacks *data);
+int				is_num(char c);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 15:04:30 by mfinette          #+#    #+#              #
-#    Updated: 2022/11/28 16:58:19 by mfinette         ###   ########.fr        #
+#    Updated: 2022/11/29 21:05:34 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ FILES = push_swap						\
 		parsing/get_data_tab			\
 		parsing/get_data				\
 		utils/ft_atoi					\
-		utils/print_tabs				\
 		utils/ft_calloc					\
 		utils/free_all					\
 		utils/ft_putstrendl				\

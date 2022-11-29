@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:08:34 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 10:42:17 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:34:46 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ int	sort_five(t_stacks *data)
 	pb(data);
 	sort_three(data);
 	inverse_sort_two_b(data);
-	tmp = data->stack_b[data->size_b - 1];
+	tmp = data->stack_b[0];
 	if (is_in_b(data, get_number_below(data, tmp)))
 		sort_two_b(data);
-	tmp = data->stack_b[data->size_b - 1];
+	tmp = data->stack_b[0];
 	push_number_to_top(data, get_number_below(data, tmp));
 	pa(data);
-	tmp = data->stack_b[data->size_b - 1];
+	tmp = data->stack_b[0];
 	push_number_to_top(data, get_number_below(data, tmp));
 	pa(data);
 	while (!is_sort(data))

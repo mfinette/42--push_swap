@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:15:21 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 09:23:47 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:52:31 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+int	is_num(char c)
+{
+	return (c >= '0' && c <= '9');
 }

@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/29 19:04:10 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 21:02:49 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static	int	check_str(char *str)
 		if (str[i + 1] && str[i] == ' ' && str[i + 1] == ' ')
 			return (0);
 		if (check_overflow_str(str))
+			return (0);
+		if (str[i] == '-' && (!is_num(str[i + 1])))
 			return (0);
 		i++;
 	}
@@ -73,13 +75,15 @@ static	int	check_tab(char **argv)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	while (argv[i])
 	{
 		while (argv[i][j])
 		{
 			if ((argv[i][j] > '9' || argv[i][j] < '0') && argv[i][j] != '-')
+				return (0);
+			if (argv[i][j] == '-' && (!argv[i][j + 1]))
 				return (0);
 			j++;
 		}
@@ -104,16 +108,16 @@ int	check_data(int argc, char **argv)
 		if (check_str(argv[1]))
 			data = get_data_str(argv[1]);
 		else
-			return (ft_putstrendl("error\n"), 0);
+			return (ft_puterror("error\n"), 0);
 	}	
 	if (argc > 2)
 	{
 		if (check_tab(&argv[1]))
 			data = get_data_tab(argc, &argv[1]);
 		else
-			return (ft_putstrendl("error\n"), 0);
+			return (ft_puterror("error\n"), 0);
 	}
 	if (!check_input(&data))
-		return (ft_putstrendl("error\n"), 0);
+		return (ft_puterror("error\n"), 0);
 	return (1);
 }
