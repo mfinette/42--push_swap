@@ -6,13 +6,13 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 07:36:32 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/23 08:29:11 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/11/29 07:27:14 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rra(t_stacks *data)
+void	ra(t_stacks *data)
 {
 	int	tmp;
 	int	i;
@@ -25,10 +25,10 @@ void	rra(t_stacks *data)
 		i++;
 	}
 	data->stack_a[i] = tmp;
-	ft_putstrendl("rra\n");
+	ft_putstrendl("ra\n");
 }
 
-void	rrb(t_stacks *data)
+void	rb(t_stacks *data)
 {
 	int	tmp;
 	int	i;
@@ -41,10 +41,10 @@ void	rrb(t_stacks *data)
 		i++;
 	}
 	data->stack_b[i] = tmp;
-	ft_putstrendl("rrb\n");
+	ft_putstrendl("rb\n");
 }
 
-void	rrr(t_stacks *data)
+void	rr(t_stacks *data)
 {
 	int	tmp;
 	int	i;
@@ -65,5 +65,5 @@ void	rrr(t_stacks *data)
 		i++;
 	}
 	data->stack_a[i] = tmp;
-	ft_putstrendl("rrr\n");
+	ft_putstrendl("rr\n");
 }
