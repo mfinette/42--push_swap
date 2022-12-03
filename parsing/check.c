@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/03 13:28:07 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/03 19:18:01 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ static	int	check_input(t_stacks *data)
 		while (j < data->size_a)
 		{
 			if (data->stack_a[i] == data->stack_a[j])
+			{
+				free_all(data);
 				return (0);
+			}
 			j++;
 		}
 		i++;
