@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/29 21:02:49 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/03 13:28:07 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,16 +108,16 @@ int	check_data(int argc, char **argv)
 		if (check_str(argv[1]))
 			data = get_data_str(argv[1]);
 		else
-			return (ft_puterror("error\n"), 0);
+			return (ft_puterror("Error\n"), 0);
 	}	
 	if (argc > 2)
 	{
 		if (check_tab(&argv[1]))
 			data = get_data_tab(argc, &argv[1]);
 		else
-			return (ft_puterror("error\n"), 0);
+			return (ft_puterror("Error\n"), 0);
 	}
 	if (!check_input(&data))
-		return (ft_puterror("error\n"), 0);
+		return (ft_puterror("Error\n"), 0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 15:04:30 by mfinette          #+#    #+#              #
-#    Updated: 2022/11/29 21:05:34 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/03 13:29:33 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 AR		= ar rcs
 RM		= @rm -f
-NORM	= norminette -R CheckDefine
 HEADER	= push_swap.h
 DEF_COLOR = \033[0;39m
 YELLOW = \033[0;93m
@@ -80,4 +79,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re

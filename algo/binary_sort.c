@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:18:28 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/02 20:40:51 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/03 13:29:03 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	solve_binary(t_stacks *data)
 			else
 				ra(data);
 			i++;
-			//print_tabs(data);
 		}
 		i = 0;
 		while (data->size_b > 0)
