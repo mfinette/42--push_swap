@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:08:34 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/29 20:34:46 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/03 10:07:08 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ static	int	is_in_b(t_stacks *data, int tmp)
 	return (0);
 }
 
-static	int	get_number_below(t_stacks *data, int tmp)
+static	int	get_number_above(t_stacks *data, int tmp)
 {
 	int	i;
 
 	i = 0;
-	if ((data->stack_sort[i]) == tmp)
-		return (data->stack_sort[data->size_sort - 1]);
+	if ((data->stack_sort[data->size_sort - 1]) == tmp)
+		return (data->stack_sort[0]);
 	while (data->stack_sort[i] != tmp)
 		i++;
-	return (data->stack_sort[i - 1]);
+	return (data->stack_sort[i + 1]);
 }
 
 static	int	push_number_to_top(t_stacks *data, int nb)
@@ -48,14 +48,14 @@ static	int	push_number_to_top(t_stacks *data, int nb)
 	while (data->stack_a[i] != nb)
 		i++;
 	bot_dist = i;
-	top_dist = data->size_a - i - 1;
+	top_dist = data->size_a - i;
 	i = 0;
-	while (data->stack_a[data->size_a - 1] != nb)
+	while (data->stack_a[0] != nb)
 	{
 		if (top_dist > bot_dist)
-			rra(data);
-		else
 			ra(data);
+		else
+			rra(data);
 		i++;
 	}
 	return (i);
@@ -68,17 +68,15 @@ int	sort_five(t_stacks *data)
 	pb(data);
 	pb(data);
 	sort_three(data);
-	inverse_sort_two_b(data);
 	tmp = data->stack_b[0];
-	if (is_in_b(data, get_number_below(data, tmp)))
-		sort_two_b(data);
+	if (is_in_b(data, get_number_above(data, tmp)))
+		sb(data);
 	tmp = data->stack_b[0];
-	push_number_to_top(data, get_number_below(data, tmp));
+	push_number_to_top(data, get_number_above(data, tmp));
 	pa(data);
 	tmp = data->stack_b[0];
-	push_number_to_top(data, get_number_below(data, tmp));
+	push_number_to_top(data, get_number_above(data, tmp));
 	pa(data);
-	while (!is_sort(data))
-		ra(data);
+	push_number_to_top(data, data->stack_sort[0]);
 	return (0);
 }

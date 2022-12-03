@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:47:09 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/27 19:35:57 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/02 21:00:37 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,28 @@ static	long	dec_to_bin(long n)
 	return (bin);
 }
 
-void	binary_index_parse(t_stacks	*data)
+static	int	get_index_sorted(t_stacks *data, int nb)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	while (i < data->size_sort)
 	{
-		while (j < data->size_sort)
-		{
-			if (data->stack_a[j] == data->stack_sort[i])
-				data->stack_a[j] = dec_to_bin(i);
-			j++;
-		}
-	j = 0;
-	i++;
+		if (nb == data->stack_sort[i])
+			return (i);
+		i++;
+	}
+	return (0);
+}
+
+void	binary_index_parse(t_stacks *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->size_a)
+	{
+		data->stack_a[i] = dec_to_bin(get_index_sorted(data, data->stack_a[i]));
+		i++;
 	}
 }

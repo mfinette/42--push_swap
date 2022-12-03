@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/29 21:05:23 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/03 10:09:30 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
@@ -72,5 +71,6 @@ void			ft_putstrendl(char *str);
 int				ft_puterror(char *str);
 int				is_sort(t_stacks *data);
 int				is_num(char c);
+void			print_tabs(t_stacks *data);
 
 #endif
