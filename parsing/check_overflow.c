@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 09:19:42 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 16:43:02 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/07 10:59:24 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ static	int	get_next_i(char *str, int i)
 	while (str[i] == ' ')
 		i++;
 	return (i);
+}
+
+static	int	check_str_valid(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!is_num(str[i]) && str[i] != ' ' && str[i] != '-')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 long	long_atoi(char *str)
@@ -68,6 +82,8 @@ int	check_overflow_str(char *str)
 	int		i;
 
 	i = 0;
+	if (!check_str_valid(str))
+		return (0);
 	while (str[i])
 	{
 		if (overflow_strlen(&str[i]) >= 10)

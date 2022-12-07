@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:46:03 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/03 19:18:01 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/07 10:59:10 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,17 @@ static	int	check_str(char *str)
 		return (0);
 	while (str[i])
 	{
-		if ((str[i] > '9' || str[i] < '0') && str[i] != ' ' && str[i] != '-')
+		if ((!is_num(str[i])) && str[i] != ' ' && str[i] != '-')
 			return (0);
+		// if ((str[i] == ' ' || str[i] == '-') && !is_num(str[i + 1]))
+		// 	return (0);
 		if (str[i + 1] && str[i] == ' ' && str[i + 1] == ' ')
 			return (0);
 		if (check_overflow_str(str))
 			return (0);
 		if (str[i] == '-' && (!is_num(str[i + 1])))
+			return (0);
+		if (is_num(str[i]) && (str[i + 1] == '-'))
 			return (0);
 		i++;
 	}
@@ -87,6 +91,8 @@ static	int	check_tab(char **argv)
 			if ((argv[i][j] > '9' || argv[i][j] < '0') && argv[i][j] != '-')
 				return (0);
 			if (argv[i][j] == '-' && (!argv[i][j + 1]))
+				return (0);
+			if (is_num(argv[i][j]) && (argv[i][j + 1] == '-'))
 				return (0);
 			j++;
 		}
