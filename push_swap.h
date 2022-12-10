@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:10:57 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/03 10:09:30 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/08 07:06:58 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -57,6 +58,7 @@ int				inverse_sort_two_b(t_stacks *data);
 int				sort_two_b(t_stacks *data);
 int				sort_three(t_stacks *data);
 int				sort_five(t_stacks *data);
+void			long_sort(t_stacks *data);
 void			solve_binary(t_stacks *data);
 
 // ****UTILS****
@@ -72,5 +74,6 @@ int				ft_puterror(char *str);
 int				is_sort(t_stacks *data);
 int				is_num(char c);
 void			print_tabs(t_stacks *data);
+int				push_number_to_top(t_stacks *data, int nb);
 
 #endif

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrendl.c                                    :+:      :+:    :+:   */
+/*   long_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 18:55:43 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/08 07:23:35 by mfinette         ###   ########.fr       */
+/*   Created: 2022/12/07 11:36:58 by mfinette          #+#    #+#             */
+/*   Updated: 2022/12/08 07:06:06 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_putstrendl(char *str)
+void	long_sort(t_stacks *data)
 {
-	write(1, str, ft_strlen(str));
-}
+	int	i;
 
-int	ft_puterror(char *str)
-{
-	return (write(2, str, ft_strlen(str)));
+	i = 0;
+	while (i < data->size_sort)
+	{
+		push_number_to_top(data, data->stack_sort[i]);
+		pb(data);
+		i++;
+	}
+	while (data->size_b > 0)
+		pa(data);
 }

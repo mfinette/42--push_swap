@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:26:34 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/02 20:38:24 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/08 07:08:08 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ int	general_sort(t_stacks *data)
 		return (sort_three(data));
 	if (data->size_a == 5)
 		return (sort_five(data));
-	else
+	if (data->size_a < 1025)
 	{
 		binary_index_parse(data);
 		return (solve_binary(data), 1);
 	}
+	else
+		return (long_sort(data), 1);
 	return (1);
 }

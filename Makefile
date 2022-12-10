@@ -6,7 +6,7 @@
 #    By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/26 15:04:30 by mfinette          #+#    #+#              #
-#    Updated: 2022/12/03 13:29:33 by mfinette         ###   ########.fr        #
+#    Updated: 2022/12/10 11:16:34 by mfinette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ FILES = push_swap						\
 		algo/sort_five					\
 		algo/sort_three					\
 		algo/sort_two					\
+		algo/long_sort					\
 		parsing/binary_parsing			\
 		parsing/check_overflow			\
 		parsing/check					\
@@ -53,13 +54,13 @@ SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
-%.o:%.c $(HEADER) Makefile
+%.o:%.c $(HEADER)
 	@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-	@$(CC) $(CFLAGS) -c $< -o $@ -I ./ 
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@echo "$(GREEN)😳😎pushswap compiled!😎😳$(DEF_COLOR)"
-	@${CC} ${FLAGS} ${OBJS} -o ${NAME}
+	@${CC} ${FLAGS} ${SRCS} -o ${NAME}
 
 
 clean:
@@ -77,6 +78,6 @@ fclean: clean
 	@echo "$(GREEN)pushswap executable files cleaned!$(DEF_COLOR)"
 
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean fclean re

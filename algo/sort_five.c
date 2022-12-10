@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 17:08:34 by mfinette          #+#    #+#             */
-/*   Updated: 2022/12/03 10:07:08 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/08 07:04:11 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static	int	get_number_above(t_stacks *data, int tmp)
 	return (data->stack_sort[i + 1]);
 }
 
-static	int	push_number_to_top(t_stacks *data, int nb)
+int	push_number_to_top(t_stacks *data, int nb)
 {
 	int	i;
 	int	top_dist;

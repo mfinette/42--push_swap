@@ -6,7 +6,7 @@
 /*   By: mfinette <mfinette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:40:00 by mfinette          #+#    #+#             */
-/*   Updated: 2022/11/28 11:08:04 by mfinette         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:12:18 by mfinette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ t_stacks	get_data_tab(int argc, char **str)
 	t_stacks	data;
 
 	i = 0;
-	data.stack_a = ft_calloc(sizeof(int), (argc - 1));
-	data.stack_b = ft_calloc(sizeof(int), (argc - 1));
-	data.stack_sort = ft_calloc(sizeof(int), (argc - 1));
+	data.stack_a = ft_calloc(sizeof(int), (argc));
+	data.stack_b = ft_calloc(sizeof(int), (argc));
+	data.stack_sort = ft_calloc(sizeof(int), (argc));
 	if (!data.stack_a || !data.stack_b || !data.stack_sort)
 		return (data);
 	data.size_a = argc - 1;
